@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>자동화를 만들기 전에, &#x27;끄는 기준&#x27;부터 정했습니다 · 임희정</title>
-<meta name="description" content="팀에서 손으로 하던 일이 있었어요. 특정 조건이 오면 사람이 직접 보고 알림을 보내는 일이요. 이걸 자동 알림으로 바꾸기로 했을 때, 만들기 전에 먼저 정한 게 있어요. &quot;이게 효과가 없으면, 언제 끌 것인가.&quot;">
+<meta name="description" content="환율이 떨어지면 사람이 직접 &quot;지금 고객에게 알림 보내주세요&quot;라고 요청하던 일이 있었어요. 이걸 자동 알림으로 바꾸는 일이 저한테 왔어요.">
 <link rel="canonical" href="https://imhuijeong92-ui.github.io/posts/10.html">
 <link rel="icon" type="image/png" href="../favicon.png">
 <meta property="og:image" content="https://imhuijeong92-ui.github.io/avatar.png">
 <meta property="og:type" content="article">
 <meta property="og:title" content="자동화를 만들기 전에, &#x27;끄는 기준&#x27;부터 정했습니다">
-<meta property="og:description" content="팀에서 손으로 하던 일이 있었어요. 특정 조건이 오면 사람이 직접 보고 알림을 보내는 일이요. 이걸 자동 알림으로 바꾸기로 했을 때, 만들기 전에 먼저 정한 게 있어요. &quot;이게 효과가 없으면, 언제 끌 것인가.&quot;">
+<meta property="og:description" content="환율이 떨어지면 사람이 직접 &quot;지금 고객에게 알림 보내주세요&quot;라고 요청하던 일이 있었어요. 이걸 자동 알림으로 바꾸는 일이 저한테 왔어요.">
 <meta property="og:url" content="https://imhuijeong92-ui.github.io/posts/10.html">
 <meta property="og:locale" content="ko_KR">
 <style>
@@ -41,16 +41,15 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);f
 <article>
 <div class="eyebrow">그로스</div>
 <h1>자동화를 만들기 전에, &#x27;끄는 기준&#x27;부터 정했습니다</h1>
-<p>팀에서 손으로 하던 일이 있었어요. 특정 조건이 오면 사람이 직접 보고 알림을 보내는 일이요.<br>
-이걸 자동 알림으로 바꾸기로 했을 때, 만들기 전에 먼저 정한 게 있어요.<br>
-&quot;이게 효과가 없으면, 언제 끌 것인가.&quot;</p>
-<p>새 자동화는 한번 켜지면 잘 안 꺼지더라고요. 효과가 애매해도 &#x27;있으니까&#x27; 계속 돌아가죠.<br>
-그래서 시작 전에 비교 방법(알림을 받은 쪽과 안 받은 쪽)과, 숫자로 효과가 안 보이면 끈다는 기준까지 함께 합의했어요.</p>
-<p>과거 데이터로 미리 돌려보니 사람보다 먼저 울린 날도 꽤 있었어요.<br>
-그래도 그건 &#x27;가능성&#x27;이지 &#x27;효과&#x27;는 아니라서, 기준은 그대로 뒀습니다.</p>
-<p>만드는 것만큼, 그만둘 기준을 먼저 정하는 게 정직한 실험이라고 생각해요.</p>
-<p>여러분 팀에서 &#x27;켜놓고 잊힌&#x27; 자동화는 없나요?</p>
-<p class="tags"><span>#그로스</span> <span>#실험</span> <span>#자동화</span></p>
+<p>환율이 떨어지면 사람이 직접 &quot;지금 고객에게 알림 보내주세요&quot;라고 요청하던 일이 있었어요. 이걸 자동 알림으로 바꾸는 일이 저한테 왔어요.</p>
+<p>먼저 지난 요청 42건을 다시 읽었어요. 원래 있던 자동 급락 알림 조건에 걸린 건 9건뿐이었어요.<br>
+사람은 1시간짜리 급락보다 &#x27;하루 동안 쌓인 하락&#x27;, &#x27;특정 환율선 돌파&#x27;, &#x27;몇 달 만의 최저&#x27;에 반응하고 있었거든요. 달러만 보는 것도 아니었어요. 통화를 언급한 14건 중 8건이 엔이나 유로였어요.</p>
+<p>그 기준으로 새로 만들어 과거에 돌려보니, 한 달에 11번쯤 울리고 사람이 요청하기 전에 먼저 울린 날이 약 71%였어요.</p>
+<p>그래도 효과는 따로 재기로 했어요.<br>
+알림은 클릭 기록이 남지 않아서, 클릭 수로는 효과를 증명할 수 없거든요. 그래서 수신 동의자 중 10%를 무작위로 떼어 알림을 안 보내고, 두 집단의 송금을 비교하기로 했어요. 숫자로 차이가 안 보이면 끄기로 정했고요.<br>
+&#x27;사람보다 먼저 울렸다&#x27;는 성과 지표에서 뺐어요. 그건 가능성이지 효과는 아니니까요.</p>
+<p>새 자동화는 한번 켜지면, 효과가 애매해도 &#x27;있으니까&#x27; 계속 돌아가기 쉬워요. 그래서 이번엔 끄는 조건부터 적어 두고 시작했어요.</p>
+<p class="tags"><span>#그로스</span> <span>#실험</span></p>
 
 </article>
 <p class="back"><a href="../#writing">← 다른 글 보기</a></p>
