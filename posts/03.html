@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>행이 조용히 사라졌는데, 에러는 0이었습니다 · 임희정</title>
+<meta name="description" content="과거 데이터를 한 번 더 넣었을 뿐인데, 집계가 수십만 행이나 조용히 줄었습니다. 에러 메시지는 하나도 없었고요.">
+<link rel="canonical" href="https://imhuijeong92-ui.github.io/posts/03.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="행이 조용히 사라졌는데, 에러는 0이었습니다">
+<meta property="og:description" content="과거 데이터를 한 번 더 넣었을 뿐인데, 집계가 수십만 행이나 조용히 줄었습니다. 에러 메시지는 하나도 없었고요.">
+<meta property="og:url" content="https://imhuijeong92-ui.github.io/posts/03.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{--bg:#ffffff;--fg:#17181c;--muted:#5b6066;--line:#e7e9ee;--card:#f7f8fa;--accent:#3a5bd9;--chip:#eef0f4;--max:680px}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1115;--fg:#e8eaed;--muted:#9aa0a8;--line:#262a31;--card:#171a20;--accent:#7f97ff;--chip:#1c2028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,sans-serif;line-height:1.85;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{height:56px;display:flex;align-items:center}
+.brand{font-weight:700;color:var(--fg)}
+article{padding:48px 0 16px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px}
+h1{font-size:30px;line-height:1.35;margin:8px 0 28px;letter-spacing:-.02em}
+article p{margin:0 0 18px}
+.tags span{display:inline-block;background:var(--chip);border-radius:6px;padding:2px 8px;margin:0 6px 6px 0;font-size:13px;color:var(--muted)}
+.cross{margin-top:24px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:15px}
+.back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
+@media (max-width:560px){h1{font-size:24px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../">← 임희정</a></div></nav>
+<main class="wrap">
+<article>
+<div class="eyebrow">데이터엔지니어링</div>
+<h1>행이 조용히 사라졌는데, 에러는 0이었습니다</h1>
+<p>과거 데이터를 한 번 더 넣었을 뿐인데, 집계가 수십만 행이나 조용히 줄었습니다. 에러 메시지는 하나도 없었고요.</p>
+<p>원인은 제 &#x27;당연한 가정&#x27;이었어요. 저는 &#x27;송금 ID는 전역적으로 고유하다&#x27;고 철석같이 믿고, 그걸 중복제거 기준으로 썼습니다. 그런데 상품마다 ID 번호가 따로 매겨지는 구조라, 번호대가 겹쳤던 거예요. 겹친 건들이 &#x27;같은 건&#x27;으로 묶여 소리 없이 사라졌습니다.</p>
+<p>조시 빌링스의 말이 떠올랐어요.<br>
+&quot;곤경에 빠지는 건 모르는 것 때문이 아니라, 확실히 안다고 믿는 게 사실이 아닐 때다.&quot;<br>
+(흔히 마크 트웨인 말로 알려졌지만, 출처는 빌링스 쪽이더라고요.)</p>
+<p>제가 몰라서가 아니라, &#x27;안다고 믿어서&#x27; 난 사고였습니다. 그 뒤로 조인·중복제거 키를 쓸 땐 &#x27;이게 정말 유일한가&#x27;를 데이터로 한 번 확인하고 넘어갑니다.</p>
+<p>여러분의 파이프라인에도 &#x27;당연히 고유하겠지&#x27; 하고 믿는 키가 있진 않나요?</p>
+<p class="tags"><span>#데이터엔지니어링</span> <span>#사일런트버그</span> <span>#일하면서배운것</span></p>
+
+</article>
+<p class="back"><a href="../#writing">← 다른 글 보기</a></p>
+</main>
+<footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+</body>
+</html>
