@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>그로스 관제탑 · 임희정</title>
+<meta name="description" content="가입부터 첫 거래까지를 사람 수와 거래액 두 축으로 한 화면에 모으고, 평소와 다른 곳과 &#x27;1%p 올리면 월 얼마&#x27;를 기준으로 팀별로 무엇부터 할지 정리하는 주간 화면을 만들었습니다.">
+<link rel="canonical" href="https://imhuijeong92-ui.github.io/work/control-tower.html">
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta property="og:image" content="https://imhuijeong92-ui.github.io/avatar.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="그로스 관제탑">
+<meta property="og:description" content="가입부터 첫 거래까지를 사람 수와 거래액 두 축으로 한 화면에 모으고, 평소와 다른 곳과 &#x27;1%p 올리면 월 얼마&#x27;를 기준으로 팀별로 무엇부터 할지 정리하는 주간 화면을 만들었습니다.">
+<meta property="og:url" content="https://imhuijeong92-ui.github.io/work/control-tower.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{--bg:#ffffff;--fg:#17181c;--muted:#5b6066;--line:#e7e9ee;--card:#f7f8fa;--accent:#3a5bd9;--chip:#eef0f4;--max:720px}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1115;--fg:#e8eaed;--muted:#9aa0a8;--line:#262a31;--card:#171a20;--accent:#7f97ff;--chip:#1c2028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,sans-serif;line-height:1.8;font-size:16.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{height:56px;display:flex;align-items:center}
+.brand{font-weight:700;color:var(--fg)}
+article{padding:44px 0 16px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px}
+h1{font-size:30px;line-height:1.35;margin:8px 0 12px;letter-spacing:-.02em}
+.summary{font-size:18px;color:var(--fg);margin:0 0 22px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;margin:0 0 18px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0 0 30px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--accent);line-height:1.2}
+.stat span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+article h2{font-size:20px;margin:34px 0 10px;letter-spacing:-.01em}
+article p{margin:0 0 14px}
+article ul{margin:0 0 14px;padding-left:20px}
+article li{margin:0 0 6px}
+.tbl{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+figure{margin:0 0 30px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+.note{color:var(--muted);font-size:13.5px;margin-top:26px}
+.back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
+@media (max-width:560px){h1{font-size:24px}.summary{font-size:16.5px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../#w-control-tower">← 임희정</a></div></nav>
+<main class="wrap">
+<article>
+<div class="eyebrow">비즈니스 · 우선순위</div>
+<h1>그로스 관제탑</h1>
+<p class="summary">가입부터 첫 거래까지를 사람 수와 거래액 두 축으로 한 화면에 모으고, 평소와 다른 곳과 &#x27;1%p 올리면 월 얼마&#x27;를 기준으로 팀별로 무엇부터 할지 정리하는 주간 화면을 만들었습니다.</p>
+<dl class="meta"><dt>시기</dt><dd>주간 운영 중 (매주 월요일 갱신)</dd><dt>내 역할</dt><dd>설계 · 구현 · 매주 갱신 · 팀별 가설 정리</dd><dt>도구</dt><dd>SQL(Grafana) · Google 웹앱 · Claude</dd></dl>
+<div class="stats"><div class="stat"><b>앞 8주</b><span>&#x27;평소 범위&#x27;를 잡는 기준(계절 타는 지표는 작년·재작년 같은 주와도 비교)</span></div><div class="stat"><b>1%p</b><span>가설마다 &#x27;이만큼 올리면 월 거래액이 얼마 움직이나&#x27;를 계산해 순서를 정함</span></div></div>
+<figure><a href="img/tower.png" target="_blank" rel="noopener"><img src="img/tower.png" alt="실제 관제탑과 같은 구성으로 다시 그린 예시 화면입니다. 서비스·팀 이름과 숫자는 모두 지어낸 값이고, 금액은 지수로 바꿨습니다." loading="lazy"></a><figcaption>실제 관제탑과 같은 구성으로 다시 그린 예시 화면입니다. 서비스·팀 이름과 숫자는 모두 지어낸 값이고, 금액은 지수로 바꿨습니다.</figcaption></figure>
+<h2>숫자는 많았는데, 무엇부터 할지는 안 보였습니다</h2>
+<p>가입 퍼널을 사람 수로 보는 화면과 거래액으로 보는 화면이 따로 있었습니다. 어디가 새는지는 보여도, 그중 무엇을 먼저 고쳐야 회사 숫자가 움직이는지는 한눈에 안 보였습니다. 다른 팀도 같이 보는 화면으로 만들기로 하고, 두 축을 한 화면에 모으는 일부터 시작했습니다.</p>
+<h2>화면 구성</h2>
+<p>맨 위 상황판에는 줄기별 한 줄 요약과 핵심 숫자 두 칸, 그리고 이번 주 값이 평소 범위 밖으로 나간 지표만 모은 &#x27;평소와 다른 곳&#x27;이 있습니다. 그 아래 탭에서 서비스별·트래픽·인바운드 퍼널과 가설 목록을 봅니다. 숫자에 마우스를 올리면 원천 테이블, 계산식, 비교 기준이 뜹니다. 차트마다 데이터로 계산한 해석 한 줄을 붙였습니다.</p>
+<h2>&#x27;평소와 다르다&#x27;는 어떻게 정하나?</h2>
+<p>이번 주 값을 앞 8주 평균과 비교하되, 표본 수까지 반영한 예측 범위(평균 ± 2σ√(1+1/n))를 넘을 때만 표시합니다. 계절을 타는 지표는 작년·재작년 같은 주와도 견줍니다.</p>
+<h2>무엇부터 건드리나</h2>
+<ul><li>결과가 평소보다 낮은 단계부터 봅니다.</li><li>순서는 ICE(영향·확신·쉬움)로 정합니다. 영향은 그 단계에 걸린 월 거래액 규모로 점수가 제안되고, 확신과 쉬움은 사람이 직접 매깁니다.</li><li>가설마다 <strong>&quot;1%p 올리면 월 거래액이 얼마 움직이나&quot;</strong>를 계산해, 효과가 큰 순으로 보이게 했습니다. 가설 한 줄에는 단계, 예상 효과, 담당 팀에 여쭐 것, 다시 볼 날이 같이 적힙니다.</li></ul>
+<h2>다시 계산해 보니</h2>
+<p>한 지표에 큰 폭의 &#x27;급감&#x27; 경보가 떴을 때, 이미 멈춘 캠페인이 평소 기준(앞 8주)에 남아 있어 낙폭이 과장돼 있었습니다. 그 캠페인을 빼고 다시 계산해 판정했습니다. 한 유입 채널은 가입 수(분모)가 1.6–1.8배로 늘었는데 다음 단계 수는 그대로여서, 비율이 낮아져 보였습니다. 이 경우는 판정에서 뺐습니다.</p>
+<h2>어디에 쓰고 있나</h2>
+<p>매주 월요일 숫자를 갱신하고, 월간 그로스 보고도 이 화면을 근거로 씁니다. 매출 지표가 떨어졌을 때는 통화별로 쪼개 원인을 확인하는 데에도 썼습니다.</p>
+<p class="note">※ 사내 기밀 보호를 위해 수치는 비율·배수 같은 상대 표현만 썼습니다.</p>
+</article>
+<p class="back"><a href="partner-routing.html">← 파트너 라우팅·수수료 최적화</a><a href="../#w-control-tower">대표 작업 목록</a></p>
+</main>
+<footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+</body>
+</html>
