@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 기반 분석 품질관리 · 임희정</title>
+<meta name="description" content="AI와 함께 리포트를 만들며 생긴 실수가 다시 나지 않도록 점검 도구와 검토 단계를 만들고, 같은 방식으로 일할 수 있게 동료에게 넘겼습니다.">
+<link rel="canonical" href="https://imhuijeong92-ui.github.io/work/ai-quality.html">
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta property="og:image" content="https://imhuijeong92-ui.github.io/avatar.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 기반 분석 품질관리">
+<meta property="og:description" content="AI와 함께 리포트를 만들며 생긴 실수가 다시 나지 않도록 점검 도구와 검토 단계를 만들고, 같은 방식으로 일할 수 있게 동료에게 넘겼습니다.">
+<meta property="og:url" content="https://imhuijeong92-ui.github.io/work/ai-quality.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{--bg:#ffffff;--fg:#17181c;--muted:#5b6066;--line:#e7e9ee;--card:#f7f8fa;--accent:#3a5bd9;--chip:#eef0f4;--max:720px}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1115;--fg:#e8eaed;--muted:#9aa0a8;--line:#262a31;--card:#171a20;--accent:#7f97ff;--chip:#1c2028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,sans-serif;line-height:1.8;font-size:16.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{height:56px;display:flex;align-items:center}
+.brand{font-weight:700;color:var(--fg)}
+article{padding:44px 0 16px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px}
+h1{font-size:30px;line-height:1.35;margin:8px 0 12px;letter-spacing:-.02em}
+.summary{font-size:18px;color:var(--fg);margin:0 0 22px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;margin:0 0 18px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0 0 30px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--accent);line-height:1.2}
+.stat span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+article h2{font-size:20px;margin:34px 0 10px;letter-spacing:-.01em}
+article p{margin:0 0 14px}
+article ul{margin:0 0 14px;padding-left:20px}
+article li{margin:0 0 6px}
+.tbl{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+.note{color:var(--muted);font-size:13.5px;margin-top:26px}
+.back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
+@media (max-width:560px){h1{font-size:24px}.summary{font-size:16.5px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../#w-ai-quality">← 임희정</a></div></nav>
+<main class="wrap">
+<article>
+<div class="eyebrow">AI · 자동화</div>
+<h1>AI 기반 분석 품질관리</h1>
+<p class="summary">AI와 함께 리포트를 만들며 생긴 실수가 다시 나지 않도록 점검 도구와 검토 단계를 만들고, 같은 방식으로 일할 수 있게 동료에게 넘겼습니다.</p>
+<dl class="meta"><dt>시기</dt><dd>진행 중</dd><dt>내 역할</dt><dd>설계 · 구현 · 사내 전파</dd><dt>도구</dt><dd>Python(AST) · Claude · Gemini(교차 검토, 시험 중)</dd></dl>
+<div class="stats"><div class="stat"><b>3번</b><span>문장 속 숫자가 실제 데이터와 달랐던 같은 종류의 실수</span></div><div class="stat"><b>2방향</b><span>개인정보 마스킹 검증(남은 개인정보 · 사라진 분석 신호)</span></div></div>
+<h2>같은 실수를 세 번 했습니다</h2>
+<p>리포트 문장에 &#x27;183건&#x27;이라고 적어 공유했는데 실제 데이터는 187건이었던 적이 있습니다. 문장에 손으로 적은 숫자는 데이터가 바뀌어도 그대로 남아 있었습니다. 비슷한 실수가 <strong>세 번</strong> 나왔고, 그다음부터는 도구로 막기로 했습니다.</p>
+<h2>만든 장치</h2>
+<ul><li><strong>문장 속 숫자 점검:</strong> 코드 구조(AST)를 읽어 데이터에 묶이지 않고 문장에 직접 적힌 숫자를 찾습니다. 예외는 이유와 함께 허용 목록에 둡니다.</li><li><strong>점검 도구의 점검:</strong> 처음엔 &quot;출처 데이터 어딘가에 같은 숫자가 있으면 통과&quot;로 짰습니다. 실제로 냈던 사고를 넣어 보니 그냥 통과시켰는데, 같은 값이 우연히 다른 곳에 있었기 때문입니다. 지금은 내가 냈던 사고를 이 검사가 잡는지 자체 시험을 같이 돌립니다.</li><li><strong>개인정보 마스킹 검증:</strong> 지워야 할 정보가 남았는지와, 지우면 안 되는 분석 신호까지 사라졌는지를 따로 확인합니다.</li><li><strong>쓰는 쪽과 보는 쪽 분리:</strong> 초안을 쓴 모델과 다른 모델이 검토하게 하고, 공유 직전·운영 SQL·숫자가 든 회신 초안에는 이 단계를 자동으로 겁니다.</li><li><strong>동료에게 넘기기:</strong> 작업 방식을 붙여넣기 한 번으로 옮길 수 있게 정리했고, 기획자용 판은 처음 질문을 한 화면 4개로 묶어 따로 만들었습니다.</li></ul>
+<h2>어디까지 왔나</h2>
+<p>리포트를 내보내기 직전에 숫자 점검을 돌리고, 걸린 숫자는 변수로 바꾸거나 이유를 적어 허용 목록에 둡니다. 교차 검토는 시험 기간이 끝나면 기록으로 효과를 판정합니다.</p>
+<p class="note">※ 사내 기밀 보호를 위해 수치는 비율·배수 같은 상대 표현만 썼습니다.</p>
+</article>
+<p class="back"><a href="voc-insight.html">← 고객 인사이트 자동화</a><a href="../#w-ai-quality">대표 작업 목록</a></p>
+</main>
+<footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+</body>
+</html>

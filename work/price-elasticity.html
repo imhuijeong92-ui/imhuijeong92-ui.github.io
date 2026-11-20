@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>가격탄력성 재해석 · 임희정</title>
+<meta name="description" content="&quot;가격을 올리면 물량이 얼마나 줄까?&quot;에 흔들리는 숫자 하나로 답하던 방식을, 손익분기선과 비교하는 결정 방식으로 바꿨습니다.">
+<link rel="canonical" href="https://imhuijeong92-ui.github.io/work/price-elasticity.html">
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta property="og:image" content="https://imhuijeong92-ui.github.io/avatar.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="가격탄력성 재해석">
+<meta property="og:description" content="&quot;가격을 올리면 물량이 얼마나 줄까?&quot;에 흔들리는 숫자 하나로 답하던 방식을, 손익분기선과 비교하는 결정 방식으로 바꿨습니다.">
+<meta property="og:url" content="https://imhuijeong92-ui.github.io/work/price-elasticity.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{--bg:#ffffff;--fg:#17181c;--muted:#5b6066;--line:#e7e9ee;--card:#f7f8fa;--accent:#3a5bd9;--chip:#eef0f4;--max:720px}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1115;--fg:#e8eaed;--muted:#9aa0a8;--line:#262a31;--card:#171a20;--accent:#7f97ff;--chip:#1c2028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,sans-serif;line-height:1.8;font-size:16.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{height:56px;display:flex;align-items:center}
+.brand{font-weight:700;color:var(--fg)}
+article{padding:44px 0 16px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px}
+h1{font-size:30px;line-height:1.35;margin:8px 0 12px;letter-spacing:-.02em}
+.summary{font-size:18px;color:var(--fg);margin:0 0 22px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;margin:0 0 18px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0 0 30px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--accent);line-height:1.2}
+.stat span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+article h2{font-size:20px;margin:34px 0 10px;letter-spacing:-.01em}
+article p{margin:0 0 14px}
+article ul{margin:0 0 14px;padding-left:20px}
+article li{margin:0 0 6px}
+.tbl{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+.note{color:var(--muted);font-size:13.5px;margin-top:26px}
+.back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
+@media (max-width:560px){h1{font-size:24px}.summary{font-size:16.5px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../#w-price-elasticity">← 임희정</a></div></nav>
+<main class="wrap">
+<article>
+<div class="eyebrow">의사결정 · 가격</div>
+<h1>가격탄력성 재해석</h1>
+<p class="summary">&quot;가격을 올리면 물량이 얼마나 줄까?&quot;에 흔들리는 숫자 하나로 답하던 방식을, 손익분기선과 비교하는 결정 방식으로 바꿨습니다.</p>
+<dl class="meta"><dt>시기</dt><dd>재추정 → 결정 방식 문서화</dd><dt>내 역할</dt><dd>문제 제기 · 방법 설계 · 보고</dd><dt>도구</dt><dd>SQL · Python(고정효과 회귀 · 이중차분) · Claude</dd></dl>
+<div class="stats"><div class="stat"><b>최대 16.7배</b><span>분석 기간만 바꿔도 벌어지던 추정 오차</span></div><div class="stat"><b>약 11배</b><span>계절에 따른 물량 변동 ÷ 가격 10% 변경 효과(한 상품 기준, 가격 효과를 가장 크게 잡은 경우)</span></div><div class="stat"><b>≈ 0</b><span>두 가지 방법으로 잰 가격 효과. 신뢰구간이 0을 포함</span></div></div>
+<h2>숫자 하나가 기간마다 바뀌었습니다</h2>
+<p>가격을 조정할 때마다 &quot;탄력성이 얼마냐&quot;는 질문이 따라왔습니다. 기존 추정을 다시 돌려 보니 분석 기간을 조금만 옮겨도 값이 흔들렸고, 추정 오차는 상품에 따라 7.8배에서 16.7배까지 벌어졌습니다. 어떤 기간에서는 <strong>가격을 올리면 물량이 늘어난다</strong>는 방향의 결과까지 유의하게 나와, 이 숫자 하나로 가격을 정할 수는 없었습니다.</p>
+<h2>다시 재면서 고른 것과 버린 것</h2>
+<ul><li><strong>데이터를 넓혔습니다.</strong> 상품에 따라 몇 년 치까지 거래 전체로 기간을 늘리고, 송금 경로와 월을 고정효과로 넣어 상품·시기 차이를 걸렀습니다.</li><li><strong>다른 방법으로 한 번 더 쟀습니다.</strong> 과거 한 번의 가격 변경을 자연 실험으로 삼아 이중차분(DiD)으로 따로 추정했습니다. 변경 전 추세가 평평한지부터 확인했습니다.</li><li><strong>상품 구성 효과를 걷어냈습니다.</strong> 비싼 상품과 싼 상품의 비중이 바뀌어 생기는 착시를 빼고 봤습니다.</li><li><strong>버린 것:</strong> 여러 추정치 중 그럴듯한 하나를 골라 정답으로 쓰는 방법. 기간에 따라 부호까지 바뀌는 값에서 하나를 고를 근거가 없었습니다.</li></ul>
+<h2>질문을 바꿨습니다</h2>
+<p>두 방법 모두 가격 효과는 0 근처였고 신뢰구간이 0을 포함했습니다. 관측 데이터만으로는 정밀하게 잡히지 않는 값이었습니다. 그래서 결정할 때는 <strong>이 값보다 민감하면 손해가 나는 선(손익분기 탄력성)</strong>을 먼저 계산하고, 추정 범위가 그 선을 넘는지 확인하도록 바꿨습니다. 물량 변동 폭을 요인별로 나눠 보면 이렇습니다.</p>
+<div class="tbl"><table><thead><tr><th>요인</th><th>물량 변동 폭(한 상품 기준)</th></tr></thead><tbody><tr><td>계절</td><td>약 24%</td></tr><tr><td>가격 10% 변경</td><td>약 2.2% (가격 효과를 가장 크게 잡은 경우)</td></tr></tbody></table></div>
+<h2>아직 모르는 것</h2>
+<p>탄력성의 정확한 값은 여전히 모릅니다. 꼭 필요해지면 작은 범위의 가격 실험으로 재야 합니다. 계절 효과는 최근 몇 년 데이터만으로 추정했습니다.</p>
+<p class="note">※ 사내 기밀 보호를 위해 수치는 비율·배수 같은 상대 표현만 썼습니다.</p>
+</article>
+<p class="back"><a href="../#w-price-elasticity">대표 작업 목록</a><a href="voc-insight.html">고객 인사이트 자동화 →</a></p>
+</main>
+<footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+</body>
+</html>
