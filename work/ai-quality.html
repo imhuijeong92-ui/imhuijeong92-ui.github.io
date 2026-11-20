@@ -43,6 +43,9 @@ article li{margin:0 0 6px}
 table{border-collapse:collapse;width:100%;font-size:14.5px}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:var(--card)}
+figure{margin:0 0 30px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
 .note{color:var(--muted);font-size:13.5px;margin-top:26px}
 .back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
@@ -58,6 +61,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);f
 <p class="summary">AI와 함께 리포트를 만들며 생긴 실수가 다시 나지 않도록 점검 도구와 검토 단계를 만들고, 같은 방식으로 일할 수 있게 동료에게 넘겼습니다.</p>
 <dl class="meta"><dt>시기</dt><dd>진행 중</dd><dt>내 역할</dt><dd>설계 · 구현 · 사내 전파</dd><dt>도구</dt><dd>Python(AST) · Claude · Gemini(교차 검토, 시험 중)</dd></dl>
 <div class="stats"><div class="stat"><b>3번</b><span>문장 속 숫자가 실제 데이터와 달랐던 같은 종류의 실수</span></div><div class="stat"><b>2방향</b><span>개인정보 마스킹 검증(남은 개인정보 · 사라진 분석 신호)</span></div></div>
+
 <h2>같은 실수를 세 번 했습니다</h2>
 <p>리포트 문장에 &#x27;183건&#x27;이라고 적어 공유했는데 실제 데이터는 187건이었던 적이 있습니다. 문장에 손으로 적은 숫자는 데이터가 바뀌어도 그대로 남아 있었습니다. 비슷한 실수가 <strong>세 번</strong> 나왔고, 그다음부터는 도구로 막기로 했습니다.</p>
 <h2>만든 장치</h2>
@@ -66,7 +70,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);f
 <p>리포트를 내보내기 직전에 숫자 점검을 돌리고, 걸린 숫자는 변수로 바꾸거나 이유를 적어 허용 목록에 둡니다. 교차 검토는 시험 기간이 끝나면 기록으로 효과를 판정합니다.</p>
 <p class="note">※ 사내 기밀 보호를 위해 수치는 비율·배수 같은 상대 표현만 썼습니다.</p>
 </article>
-<p class="back"><a href="voc-insight.html">← 고객 인사이트 자동화</a><a href="../#w-ai-quality">대표 작업 목록</a></p>
+<p class="back"><a href="voc-insight.html">← 고객 인사이트 자동화</a><a href="../#w-ai-quality">대표 작업 목록</a><a href="partner-routing.html">파트너 라우팅·수수료 최적화 →</a></p>
 </main>
 <footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
 </body>

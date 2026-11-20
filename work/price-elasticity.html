@@ -43,6 +43,9 @@ article li{margin:0 0 6px}
 table{border-collapse:collapse;width:100%;font-size:14.5px}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:var(--card)}
+figure{margin:0 0 30px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
 .note{color:var(--muted);font-size:13.5px;margin-top:26px}
 .back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
@@ -58,6 +61,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);f
 <p class="summary">&quot;가격을 올리면 물량이 얼마나 줄까?&quot;에 흔들리는 숫자 하나로 답하던 방식을, 손익분기선과 비교하는 결정 방식으로 바꿨습니다.</p>
 <dl class="meta"><dt>시기</dt><dd>재추정 → 결정 방식 문서화</dd><dt>내 역할</dt><dd>문제 제기 · 방법 설계 · 보고</dd><dt>도구</dt><dd>SQL · Python(고정효과 회귀 · 이중차분) · Claude</dd></dl>
 <div class="stats"><div class="stat"><b>최대 16.7배</b><span>분석 기간만 바꿔도 벌어지던 추정 오차</span></div><div class="stat"><b>약 11배</b><span>계절에 따른 물량 변동 ÷ 가격 10% 변경 효과(한 상품 기준, 가격 효과를 가장 크게 잡은 경우)</span></div><div class="stat"><b>≈ 0</b><span>두 가지 방법으로 잰 가격 효과. 신뢰구간이 0을 포함</span></div></div>
+
 <h2>숫자 하나가 기간마다 바뀌었습니다</h2>
 <p>가격을 조정할 때마다 &quot;탄력성이 얼마냐&quot;는 질문이 따라왔습니다. 기존 추정을 다시 돌려 보니 분석 기간을 조금만 옮겨도 값이 흔들렸고, 추정 오차는 상품에 따라 7.8배에서 16.7배까지 벌어졌습니다. 어떤 기간에서는 <strong>가격을 올리면 물량이 늘어난다</strong>는 방향의 결과까지 유의하게 나와, 이 숫자 하나로 가격을 정할 수는 없었습니다.</p>
 <h2>다시 재면서 고른 것과 버린 것</h2>

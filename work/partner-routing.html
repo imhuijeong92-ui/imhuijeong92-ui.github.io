@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>파트너 라우팅·수수료 최적화 · 임희정</title>
+<meta name="description" content="송금을 여러 파트너에 나눠 보낼 때, 지금 배분과 달성 가능한 최적 배분의 비용 차이를 재는 시뮬레이터를 만들었습니다.">
+<link rel="canonical" href="https://imhuijeong92-ui.github.io/work/partner-routing.html">
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta property="og:image" content="https://imhuijeong92-ui.github.io/avatar.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="파트너 라우팅·수수료 최적화">
+<meta property="og:description" content="송금을 여러 파트너에 나눠 보낼 때, 지금 배분과 달성 가능한 최적 배분의 비용 차이를 재는 시뮬레이터를 만들었습니다.">
+<meta property="og:url" content="https://imhuijeong92-ui.github.io/work/partner-routing.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{--bg:#ffffff;--fg:#17181c;--muted:#5b6066;--line:#e7e9ee;--card:#f7f8fa;--accent:#3a5bd9;--chip:#eef0f4;--max:720px}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1115;--fg:#e8eaed;--muted:#9aa0a8;--line:#262a31;--card:#171a20;--accent:#7f97ff;--chip:#1c2028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,sans-serif;line-height:1.8;font-size:16.5px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{height:56px;display:flex;align-items:center}
+.brand{font-weight:700;color:var(--fg)}
+article{padding:44px 0 16px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px}
+h1{font-size:30px;line-height:1.35;margin:8px 0 12px;letter-spacing:-.02em}
+.summary{font-size:18px;color:var(--fg);margin:0 0 22px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;margin:0 0 18px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0 0 30px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--accent);line-height:1.2}
+.stat span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+article h2{font-size:20px;margin:34px 0 10px;letter-spacing:-.01em}
+article p{margin:0 0 14px}
+article ul{margin:0 0 14px;padding-left:20px}
+article li{margin:0 0 6px}
+.tbl{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+figure{margin:0 0 30px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+.note{color:var(--muted);font-size:13.5px;margin-top:26px}
+.back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
+@media (max-width:560px){h1{font-size:24px}.summary{font-size:16.5px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../#w-partner-routing">← 임희정</a></div></nav>
+<main class="wrap">
+<article>
+<div class="eyebrow">가격 · 비용</div>
+<h1>파트너 라우팅·수수료 최적화</h1>
+<p class="summary">송금을 여러 파트너에 나눠 보낼 때, 지금 배분과 달성 가능한 최적 배분의 비용 차이를 재는 시뮬레이터를 만들었습니다.</p>
+<dl class="meta"><dt>시기</dt><dd>첫 버전부터 163번 고치며 운영 중</dd><dt>내 역할</dt><dd>설계 · 구현 · 월간 평가 · 동료용 가이드</dd><dt>도구</dt><dd>Python(데이터 빌드) · HTML/JS 단일 파일 · Claude</dd></dl>
+<div class="stats"><div class="stat"><b>약 8.8%</b><span>지난해 12개월을 최적 배분으로 다시 계산했을 때 줄어드는 계약 비용(수수료·약정 기준, 숨은 비용 제외)</span></div><div class="stat"><b>3.3–21.7%</b><span>같은 계산에서 달마다 달랐던 차이</span></div></div>
+<figure><a href="img/routing-sim.png" target="_blank" rel="noopener"><img src="img/routing-sim.png" alt="실제 시뮬레이터와 같은 구성으로 다시 그린 예시 화면입니다. 파트너 이름과 숫자는 모두 지어낸 값입니다." loading="lazy"></a><figcaption>실제 시뮬레이터와 같은 구성으로 다시 그린 예시 화면입니다. 파트너 이름과 숫자는 모두 지어낸 값입니다.</figcaption></figure>
+<h2>파트너마다 비용이 붙는 방식이 달랐습니다</h2>
+<p>송금은 여러 해외 파트너에 나눠 보냅니다. 파트너마다 건당 수수료, 최소 약정, 물량 구간별 요율, 환전할 때 생기는 숨은 비용, 자금을 미리 보내 두는 비용이 제각각 붙습니다. 배분을 조금 바꾸면 총비용이 얼마나 달라지는지를 한 번에 볼 수단이 없었고, 그래서 이걸 계산하는 도구를 직접 만들었습니다.</p>
+<h2>넣는 것과 나오는 것</h2>
+<p>분석할 달, 성장률 가정, 최소 약정 조건, 배분 방법(지금 배분 / 총비용 최소화)을 고르고 통화·파트너별로 직접 조정할 수 있습니다. 결과로는 파트너별 총비용 표와 지금 배분 대비 차이, 약정·물량 구간 달성 여부가 나옵니다. 숨은 비용은 파트너가 환전에 적용한 환율과 같은 시각 기준 환율의 차이를 통화·월별로 집계해, 수수료와 따로 잰 뒤 합칩니다. 팀에는 HTML 파일 하나를 링크로 공유하고, 새 달 데이터는 빌드 스크립트를 다시 돌려 채웁니다.</p>
+<h2>만들면서 바꾼 것</h2>
+<p>처음엔 분기 단위로 계산했는데, 달별로 보려고 월 단위로 바꿨습니다. 최적 배분을 찾는 탐색은 한 칸씩 바꿔 가며 내려가는 방식이라 중간 지점에서 멈추는 경우가 있어, 여러 출발점에서 다시 찾도록 고쳤습니다. 월간 평가를 만들다가 <strong>평균으로 근사한 값이 착시를 만든다</strong>는 걸 발견했고, 금액 구간별 최적을 따로 푸는 시뮬레이터를 하나 더 만들었습니다. 최적을 계산할 때는 계약서에 적힌 조건만 쓰기로 정하고, 특정 물량 구간을 계속 유지한다는 예전 전제는 뺐습니다.</p>
+<h2>숫자로 본 결과</h2>
+<p>지난해 12개월을 최적 배분으로 다시 계산하면 계약 비용(수수료·약정)이 약 8.8% 줄어드는 것으로 나왔고, 그 폭은 달에 따라 3.3%에서 21.7%까지 달랐습니다. 이 계산은 선택한 기간의 거래가 그대로 반복된다고 가정하고, 숨은 비용은 넣지 않은 값입니다. 매달 실제 배분과 최적을 비교하는 평가 리포트를 시뮬레이터와 함께 내고, 동료가 자기 AI로 같은 시뮬레이터를 만들 수 있도록 만드는 법을 가이드로 정리해 넘겼습니다.</p>
+<p class="note">※ 사내 기밀 보호를 위해 수치는 비율·배수 같은 상대 표현만 썼습니다.</p>
+</article>
+<p class="back"><a href="ai-quality.html">← AI 기반 분석 품질관리</a><a href="../#w-partner-routing">대표 작업 목록</a></p>
+</main>
+<footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+</body>
+</html>
