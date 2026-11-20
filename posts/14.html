@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>숫자마다 출처를 붙인 화면을 만든 이유 · 임희정</title>
+<meta name="description" content="리더가 짚어 준 점이 있었어요 가입부터 첫 송금까지 이어지는 흐름을 저 혼자 보고 있다는 거였어요 그러면 담당 팀의 이력도 피드백도 못 받아요 서비스마다 퍼널을 따로 만드는 것도 낭비였구요">
+<link rel="canonical" href="https://imhuijeong92-ui.github.io/posts/14.html">
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta property="og:image" content="https://imhuijeong92-ui.github.io/avatar.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="숫자마다 출처를 붙인 화면을 만든 이유">
+<meta property="og:description" content="리더가 짚어 준 점이 있었어요 가입부터 첫 송금까지 이어지는 흐름을 저 혼자 보고 있다는 거였어요 그러면 담당 팀의 이력도 피드백도 못 받아요 서비스마다 퍼널을 따로 만드는 것도 낭비였구요">
+<meta property="og:url" content="https://imhuijeong92-ui.github.io/posts/14.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{--bg:#ffffff;--fg:#17181c;--muted:#5b6066;--line:#e7e9ee;--card:#f7f8fa;--accent:#3a5bd9;--chip:#eef0f4;--max:680px}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1115;--fg:#e8eaed;--muted:#9aa0a8;--line:#262a31;--card:#171a20;--accent:#7f97ff;--chip:#1c2028}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,sans-serif;line-height:1.85;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{height:56px;display:flex;align-items:center}
+.brand{font-weight:700;color:var(--fg)}
+article{padding:48px 0 16px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px}
+h1{font-size:30px;line-height:1.35;margin:8px 0 28px;letter-spacing:-.02em}
+article p{margin:0 0 18px}
+.tags span{display:inline-block;background:var(--chip);border-radius:6px;padding:2px 8px;margin:0 6px 6px 0;font-size:13px;color:var(--muted)}
+.cross{margin-top:24px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:15px}
+.back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px}
+footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
+@media (max-width:560px){h1{font-size:24px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../">← 임희정</a></div></nav>
+<main class="wrap">
+<article>
+<div class="eyebrow">지표설계</div>
+<h1>숫자마다 출처를 붙인 화면을 만든 이유</h1>
+<p>리더가 짚어 준 점이 있었어요<br>
+가입부터 첫 송금까지 이어지는 흐름을 저 혼자 보고 있다는 거였어요<br>
+그러면 담당 팀의 이력도 피드백도 못 받아요<br>
+서비스마다 퍼널을 따로 만드는 것도 낭비였구요</p>
+<p>그래서 모두가 같이 보는 화면을 하나 만들었고, 숫자마다 출처를 붙이기로 했어요</p>
+<p>숫자에 마우스를 올리면 출처와 계산식이 떠요<br>
+같이 보는 숫자는 출처를 묻는 데서 대화가 멈추기 쉬워요<br>
+그 질문에 화면이 먼저 답하게 했어요</p>
+<p>&#x27;평소보다 낮다&#x27;의 기준을 데이터로 다시 골랐어요<br>
+처음엔 앞 8주의 최저–최고를 평소 범위로 썼어요<br>
+그런데 지난 값들에 대 보니, 아무 일이 없어도 22%가 그 범위 밖으로 나가더라구요<br>
+네다섯 주에 한 번은 괜히 빨간불이 켜지는 셈이었어요<br>
+그래서 평균에서 표준편차 두 배까지를 평소로 보게 바꿨어요<br>
+거짓 경보가 0이 된 건 아니지만, 줄었어요</p>
+<p>거짓 경보는 대개 &#x27;분모&#x27;에서 왔어요<br>
+한 경로의 가입만 갑자기 1.5–2배로 늘자, 다음 단계 비율이 뚝 떨어진 것처럼 보였어요<br>
+실제로 다음 단계로 간 사람 수는 그대로였는데요<br>
+그 줄은 비율 대신 사람 수로 판정하게 바꿨어요<br>
+비교 기간에 이미 멈춘 광고 캠페인이 섞여서, 광고비가 반 가까이 줄었다는 거짓 &#x27;낮음&#x27;이 뜬 적도 있어요</p>
+<p>예쁘게 바꿨다가 되돌린 적도 있어요<br>
+요약을 카드와 칩으로 바꿔 봤는데, 막상 보니 이전이 나았어요<br>
+칩 목록으로는 숫자가 범위 안 어디쯤인지가 안 보였거든요<br>
+그날 바로 되돌렸어요</p>
+<p>새 화면은 요청이 올 때만 만들어요<br>
+미리 만들면 안 볼 화면만 늘어날 것 같았어요<br>
+그래서 누군가 실제로 물어볼 때 만들어요</p>
+<p>계산식을 적다 보면 제가 뭘 잘못 셌는지가 먼저 보이기도 해요</p>
+<p>여러분 팀은 &#x27;평소보다 낮다&#x27;를 무엇으로 정하세요?!</p>
+<p class="tags"><span>#지표설계</span> <span>#협업</span> <span>#데이터분석</span></p>
+
+</article>
+<p class="back"><a href="../#writing">← 다른 글 보기</a></p>
+</main>
+<footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+</body>
+</html>
