@@ -30,13 +30,19 @@ h1{font-size:30px;line-height:1.35;margin:8px 0 28px;letter-spacing:-.02em}
 article p{margin:0 0 18px}
 .tags span{display:inline-block;background:var(--chip);border-radius:6px;padding:2px 8px;margin:0 6px 6px 0;font-size:13px;color:var(--muted)}
 .cross{margin-top:24px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:15px}
+article strong{font-weight:700}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:28px;font-size:15px}
+.pager a{display:block;max-width:48%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;color:var(--fg)}
+.pager a:hover{text-decoration:none;border-color:var(--accent)}
+.pager small{display:block;color:var(--muted);font-size:13px}
+.pager .next{margin-left:auto;text-align:right}
 .back{border-top:1px solid var(--line);margin-top:8px;padding:20px 0 40px;font-size:15px}
 footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:13.5px}
 @media (max-width:560px){h1{font-size:24px}body{font-size:16px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a class="brand" href="../">← 임희정</a></div></nav>
+<nav><div class="wrap"><a class="brand" href="../#p11" data-back>← 임희정</a></div></nav>
 <main class="wrap">
 <article>
 <div class="eyebrow">AI활용</div>
@@ -56,9 +62,22 @@ footer{border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);f
 <p>여러분은 AI로 뭔가 &#x27;끝까지&#x27; 만들어본 적 있으신가요?!</p>
 <p class="tags"><span>#AI활용</span> <span>#사이드프로젝트</span> <span>#일하면서배운것</span></p>
 
+<nav class="pager"><a class="prev" href="10.html"><small>← 이전 글</small>자동화를 만들기 전에 &#x27;끄는 기준&#x27;부터 정했습니다</a><a class="next" href="12.html"><small>다음 글 →</small>채용 공고 59건을 열어 보니 &#x27;AI&#x27;만큼 자주 나온 말이 있었어요</a></nav>
 </article>
-<p class="back"><a href="../#writing">← 다른 글 보기</a></p>
+<p class="back"><a href="../#p11" data-back>← 글 목록으로</a></p>
 </main>
 <footer><div class="wrap">© 임희정 (Huijeong Im)</div></footer>
+<script>
+document.querySelectorAll('a[data-back]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    try{
+      var r = document.referrer ? new URL(document.referrer) : null;
+      if(r && r.origin === location.origin && /\/(index\.html)?$/.test(r.pathname) && history.length > 1){
+        e.preventDefault(); history.back();
+      }
+    }catch(err){}
+  });
+});
+</script>
 </body>
 </html>

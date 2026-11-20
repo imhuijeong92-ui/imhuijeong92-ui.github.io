@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>임희정 · 데이터 · 그로스</title>
-<meta name="description" content="핀테크 송금사에서 데이터 분석과 그로스를 담당합니다. 가격·마진 분석, 리텐션, Paid/Non-paid 트래픽 획득. 비즈니스 맥락을 아는 분석가." />
+<meta name="description" content="핀테크 송금사에서 데이터 분석과 그로스를 담당합니다. 가격·마진 분석, 리텐션, Paid/Non-paid 트래픽 획득. 비즈니스 맥락을 알고 숫자에 강한, 직접 만들어 내는 사람." />
 
 <!-- Open Graph (링크 공유·검색 노출용) -->
 <meta property="og:type" content="website" />
@@ -78,6 +78,10 @@
   .btn:hover{text-decoration:none; border-color:var(--accent); color:var(--accent)}
   .btn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
   .btn.primary:hover{color:#fff; opacity:.92}
+  button.btn{font:inherit; cursor:pointer}
+  .hero .mail{font-size:17px; margin:14px 0 0}
+  .hero .mail a{font-weight:600; user-select:all}
+  .hero .copymsg{min-height:1.4em; margin:8px 0 0; font-size:14px; color:var(--muted)}
 
   section{padding:34px 0; border-top:1px solid var(--line)}
   h2{font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 20px; font-weight:700}
@@ -111,7 +115,7 @@
   .chip{background:var(--chip); padding:6px 12px; border-radius:8px; font-size:13.5px}
 
   /* writing */
-  .post{padding:12px 0; border-top:1px dashed var(--line)}
+  .post{padding:12px 0; border-top:1px dashed var(--line); scroll-margin-top:72px}
   .post:first-child{border-top:0}
   .post .meta{font-size:13px; color:var(--muted)}
   .post h3{font-size:16px; margin:2px 0 4px}
@@ -136,7 +140,6 @@
       <a href="#edu">학력</a>
       <a href="#work">대표 작업</a>
       <a href="#writing">글</a>
-      <a href="#contact">연락</a>
     </div>
     <button id="themeBtn" aria-label="테마 전환">◐</button>
   </div>
@@ -148,10 +151,14 @@
     <div class="eyebrow">Data · Growth</div>
     <h1>데이터로 그로스를 설계합니다.</h1>
     <p class="sub">핀테크 송금사에서 가격·마진·리텐션을 분석하고, Paid/Non-paid 트래픽 획득을 직접 운영합니다.</p>
-    <p class="lead">사업개발(BD)로 커리어를 시작해 수익전략 조직을 거쳐 데이터·그로스로 전환했습니다. 비즈니스 맥락을 아는 분석가로서, 숫자를 의사결정과 매출 성장으로 연결하는 일을 합니다.</p>
+    <p class="lead">사업개발(BD)로 커리어를 시작해 수익전략 조직을 거쳐 데이터·그로스로 전환했습니다. 비즈니스 맥락을 알고 숫자에 강한, 직접 만들어 내는 사람을 지향합니다. 분석에서 멈추지 않고 숫자를 의사결정과 매출 성장까지 잇습니다.</p>
+    <p class="mail">✉️ <a href="mailto:imhuijeong92@gmail.com" id="mailAddr">imhuijeong92@gmail.com</a></p>
     <div class="cta">
-      <a class="btn primary" href="#contact">연락하기</a>
-      <a class="btn" href="https://careerly.co.kr/profile/760410" target="_blank" rel="noopener">커리어리</a>    </div>
+      <button type="button" class="btn primary" id="copyMail">이메일 주소 복사</button>
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=imhuijeong92@gmail.com" target="_blank" rel="noopener">Gmail로 쓰기</a>
+      <a class="btn" href="https://careerly.co.kr/profile/760410" target="_blank" rel="noopener">커리어리</a>
+    </div>
+    <p class="copymsg" id="copyMsg" role="status" aria-live="polite"></p>
   </div>
 </header>
 
@@ -317,104 +324,96 @@
   <div class="wrap">
     <h2>글</h2>
     <!-- POSTS:START (build_posts.py 가 생성) -->
-    <div class="post">
+    <div class="post" id="p01">
       <div class="meta">데이터분석 · <a href="https://careerly.co.kr/community?post=127886" target="_blank" rel="noopener">커리어리 ↗</a></div>
       <h3><a href="posts/01.html">문의가 100배 늘었다고요? 라벨이 바뀐 거였어요</a></h3>
       <p class="ex">고객 상담 데이터를 월별로 보는데, &#x27;○○ 지연&#x27; 문의 비중이 0.1%에서 11.7%로 올라 있었어요. 100배 넘게 뛴 거죠. 숫자만 보면 바…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p02">
       <div class="meta">AI활용</div>
       <h3><a href="posts/02.html">AI에게 리포트를 맡길 때 제가 꼭 거는 세 가지 장치</a></h3>
       <p class="ex">리포트 문장에 &#x27;183건&#x27;이라고 적어 공유했는데, 실제 데이터는 187건이었던 적이 있어요 데이터가 늘면서 표는 바뀌었는데, 문장 속 숫자는 손…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p03">
       <div class="meta">데이터엔지니어링</div>
       <h3><a href="posts/03.html">행이 조용히 사라졌는데 에러는 0이었습니다</a></h3>
       <p class="ex">2019년부터 쌓인 과거 송금 데이터를 분석용 표에 합쳐 넣은 날이었어요 돌려보니 줄어선 안 될 행이 십만 단위로 사라져 있었습니다 에러 메시지…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p04">
       <div class="meta">의사결정</div>
       <h3><a href="posts/04.html">물량을 움직인 건 가격보다 &#x27;계절&#x27;이었습니다</a></h3>
       <p class="ex">&quot;수수료를 10% 바꾸면 송금이 얼마나 줄까?&quot; 오래 붙들고 있던 질문이에요 2019년부터의 거래를 전부 놓고 다시 쟀어요</p>
     </div>
-    <div class="post">
+    <div class="post" id="p05">
       <div class="meta">그로스</div>
       <h3><a href="posts/05.html">신규보다 &#x27;처음 90일&#x27;이었습니다</a></h3>
       <p class="ex">해외에서 한국으로 들어오는 송금을 분석할 때였어요 첫 번째 벽은 &#x27;고객이 누구냐&#x27;였어요 보내는 사람은 해외 협력사의 고객이라 우리 데이터에 없고…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p06">
       <div class="meta">VoC</div>
       <h3><a href="posts/06.html">고객 문의를 &#x27;매주 읽는 리포트&#x27;로 바꾼 이야기</a></h3>
       <p class="ex">시작은 짧은 요청이었어요 고객 문의를 모아서 주차별 특이사항과 개선할 점을 뽑아 달라는 것</p>
     </div>
-    <div class="post">
+    <div class="post" id="p07">
       <div class="meta">검증</div>
       <h3><a href="posts/07.html">새 가설을 재기 전에 답을 아는 구간에서 먼저 재봅니다</a></h3>
       <p class="ex">&quot;그 시기의 가격 어딘가에는 눈에 안 보이는 비용이 숨어 있었을 거야.&quot; 꽤 그럴듯한 의심이었고, 맞다면 그동안의 가격 분석이 통째로 틀리는 상…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p08">
       <div class="meta">AI활용</div>
       <h3><a href="posts/08.html">제가 AI와 일하는 방식을 붙여넣기 한 번으로 동료에게 넘겼습니다</a></h3>
       <p class="ex">AI로 일하는 방식이 어느 정도 자리를 잡자, 팀원과 기획자도 같은 방식으로 쓸 수 있게 하고 싶었어요 문제는 그 방식이 제 머릿속과 제 컴퓨터…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p09">
       <div class="meta">지표</div>
       <h3><a href="posts/09.html">결승선이 다르면 같은 &#x27;완료&#x27;가 아니었습니다</a></h3>
       <p class="ex">&quot;어느 쪽 송금이 더 빨라요?&quot; 처리 속도를 비교하는 단순한 질문이었어요 금방 끝날 줄 알았는데, 비교 기준을 몇 번이나 다시 잡아야 했어요</p>
     </div>
-    <div class="post">
+    <div class="post" id="p10">
       <div class="meta">그로스</div>
       <h3><a href="posts/10.html">자동화를 만들기 전에 &#x27;끄는 기준&#x27;부터 정했습니다</a></h3>
       <p class="ex">환율이 떨어지면 사람이 직접 &quot;지금 고객에게 알림 보내주세요&quot;라고 요청하던 일이 있었어요 이걸 자동 알림으로 바꾸는 일이 저한테 왔어요</p>
     </div>
-    <div class="post">
+    <div class="post" id="p11">
       <div class="meta">AI활용</div>
       <h3><a href="posts/11.html">개발자가 아닌데 앱을 만들어 공개했습니다</a></h3>
       <p class="ex">저는 개발자가 아니에요 그런데 얼마 전, 화면 위에 눈이 내리고 눈사람이 쌓이는 작은 앱을 맥과 윈도우용으로 만들어 GitHub에 공개했어요(M…</p>
     </div>
-    <div class="post">
-      <div class="meta">데이터분석</div>
+    <div class="post" id="p12">
+      <div class="meta">데이터분석 · <a href="https://careerly.co.kr/community?post=127908" target="_blank" rel="noopener">커리어리 ↗</a></div>
       <h3><a href="posts/12.html">채용 공고 59건을 열어 보니 &#x27;AI&#x27;만큼 자주 나온 말이 있었어요</a></h3>
       <p class="ex">2018년 데이터야놀자에서 만 2년차 분석가가 발표한 자료를 봤어요(윤선미 님). 채용 공고 103건을 손으로 모아서 &#x27;회사는 어떤 분석가를 원…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p13">
       <div class="meta">업무방식</div>
       <h3><a href="posts/13.html">아무것도 모르는 채로 맡은 일, 아침 한 화면부터 만들었어요</a></h3>
       <p class="ex">올해 10월 중순, 검색·광고 트래픽을 맡게 됐어요 솔직히 SEO도 광고도 처음이었어요 그런데 굴려야 할 줄기는 넷이었구요 서비스 두 개에 각각…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p14">
       <div class="meta">지표설계</div>
       <h3><a href="posts/14.html">숫자마다 출처를 붙인 화면을 만든 이유</a></h3>
       <p class="ex">리더가 짚어 준 점이 있었어요 가입부터 첫 송금까지 이어지는 흐름을 저 혼자 보고 있다는 거였어요 그러면 담당 팀의 이력도 피드백도 못 받아요…</p>
     </div>
-    <div class="post">
+    <div class="post" id="p15">
       <div class="meta">공부법</div>
       <h3><a href="posts/15.html">하루 40분 공부 계획이 밀려서 5분으로 줄였어요</a></h3>
       <p class="ex">새 일을 맡고 처음 세운 공부 계획은 하루 40분이었어요 단원 하나, 도구 실습 하나, 확인 질문까지요 그리고 밀렸어요,,,</p>
     </div>
-    <div class="post">
+    <div class="post" id="p16">
       <div class="meta">SEO</div>
       <h3><a href="posts/16.html">기획서를 다 쓰고 나서야 검색 유입 크기를 쟀어요</a></h3>
       <p class="ex">사이트를 점검하다가 빈칸 하나를 찾았어요 이걸 채울 새 안내 페이지를 만들자고 생각했고, 기획안을 끝까지 썼어요</p>
     </div>
-    <div class="post">
+    <div class="post" id="p17">
       <div class="meta">SEO</div>
       <h3><a href="posts/17.html">색인이 3/4 줄었을 때 분모부터 갈랐어요</a></h3>
       <p class="ex">자동으로 만든 페이지의 구글 색인이 석 달 사이 약 3/4 줄었어요 처음 떠오른 가설은 둘이었어요 주소가 깊은 페이지가 얇아서, 아니면 사이트맵…</p>
     </div>
     <!-- POSTS:END -->
-    <p class="note">일하면서 배운 것을 적습니다. 커리어리에도 한 주에 한 편씩 올립니다.</p>
+    <p class="note">일하면서 배운 것을 적습니다. 커리어리에도 올립니다.</p>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap">
-    <h2>연락</h2>
-    <div class="cta">
-      <a class="btn primary" href="mailto:imhuijeong92@gmail.com">이메일</a>
-      <a class="btn" href="https://careerly.co.kr/profile/760410" target="_blank" rel="noopener">커리어리</a>    </div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
@@ -440,6 +439,45 @@
     });
   })();
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // 이메일 주소 복사 (메일 앱이 없으면 mailto 가 아무 반응이 없어서)
+  (function(){
+    var btn = document.getElementById('copyMail'), msg = document.getElementById('copyMsg');
+    var addr = 'imhuijeong92@gmail.com';
+    function done(t){ msg.textContent = t; setTimeout(function(){ msg.textContent = ''; }, 3000); }
+    function fallback(){
+      var r = document.createRange(), a = document.getElementById('mailAddr');
+      r.selectNodeContents(a); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      try{ document.execCommand('copy'); done('주소를 복사했어요'); }catch(e){ done('주소를 선택해 두었어요 — 복사해 주세요'); }
+    }
+    btn.addEventListener('click', function(){
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(addr).then(function(){ done('주소를 복사했어요'); }, fallback);
+      } else { fallback(); }
+    });
+  })();
+
+  // 글을 읽고 '뒤로' 왔을 때 읽던 자리로 (브라우저가 스크롤을 못 기억하는 경우 대비)
+  (function(){
+    var KEY = 'idxScrollY', root = document.documentElement;
+    function jump(y){
+      var b = root.style.scrollBehavior; root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, y); root.style.scrollBehavior = b;
+    }
+    function isBack(){
+      try{ var n = performance.getEntriesByType('navigation')[0]; return n && n.type === 'back_forward'; }catch(e){ return false; }
+    }
+    function restore(){
+      var y = null;
+      try{ y = sessionStorage.getItem(KEY); }catch(e){}
+      if(y !== null && isBack()){ jump(+y); return; }
+      var t = location.hash && document.getElementById(location.hash.slice(1));
+      if(t && /^#p\d+$/.test(location.hash)){ jump(t.getBoundingClientRect().top + window.scrollY - 72); }
+    }
+    window.addEventListener('pagehide', function(){ try{ sessionStorage.setItem(KEY, String(window.scrollY)); }catch(e){} });
+    window.addEventListener('pageshow', function(e){ if(e.persisted) return; restore(); });
+    if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  })();
 </script>
 
 </body>
